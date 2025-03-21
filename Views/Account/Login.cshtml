@@ -1,0 +1,51 @@
+﻿@{
+    // Set the page title
+    ViewBag.Title = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title> <!-- Use the ViewBag.Title for the page title -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-secondary">
+    <div class="container">
+        <!-- Create a row and center the content horizontally -->
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <!-- Create a column with a width of 6 out of 12 columns in the grid system -->
+            <div class="col-md-4 bg-light">
+                <!-- Heading for the login page -->
+                <h2 class="">User Login</h2>
+                <!--form for user login with method POST -->
+                <form method="post" action="/Account/Login">
+                    <div class="">
+                        <!-- Input field for username and password -->
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+
+                    <!-- Submit button for the form -->
+                    <button type="submit" class="btn btn-primary mt-2">Login</button>
+                </form>
+                <!-- Forgot Password link -->
+                <div>
+                    <a href="/Account/ForgotPassword" class="btn btn-link">Forgot Password?</a>
+                </div>
+
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert" role="alert">
+                        @ViewBag.Message
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
