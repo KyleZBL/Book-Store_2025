@@ -19,8 +19,6 @@
             <div class="col-md-4 bg-light">
                 <!-- Heading for the login page -->
                 <h2 class="">User Login</h2>
-
-
                 <!--form for user login with method POST -->
                 <form method="post" action="/Account/Login">
                     <div class="">
@@ -32,7 +30,6 @@
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
 
-
                     <!-- Submit button for the form -->
                     <button type="submit" class="btn btn-primary mt-2">Login</button>
                 </form>
@@ -40,7 +37,6 @@
                 <div>
                     <a href="/Account/ForgotPassword" class="btn btn-link">Forgot Password?</a>
                 </div>
-
 
                 @if (ViewBag.Message != null)
                 {
