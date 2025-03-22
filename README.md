@@ -30,14 +30,6 @@ password varchar(30) not null,
 isAuthor int not null,
 );
 
-
-CREATE TABLE Author(
-AuthorID INT IDENTITY(1,1) PRIMARY KEY,
-FirstName VARCHAR(20),
-LastName VARCHAR(20)
-);
-
-
 CREATE TABLE Books (
 BookID INT IDENTITY(1,1) PRIMARY KEY,
 ISBN VARCHAR(20) UNIQUE, 
