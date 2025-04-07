@@ -18,7 +18,7 @@
     <h1>User Interface</h1>
 
     <!-- Display All Books -->
-    <h2>Display All Books</h2>
+    <h2>Inventory</h2>
     <form action="/Book/User_Interface" method="get">
         <button type="submit" class="btn btn-primary">Display all</button>
     </form>
@@ -27,14 +27,14 @@
     <!-- Display Book List -->
     @if (Model != null && Model.Any())
     {
-        <h2>Books List</h2>
+        <h2>Book Inventory</h2>
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
                     @foreach (var prop in typeof(Book).GetProperties())
                     {
                         <th>@prop.Name</th>
- <!-- Dynamically create headers from model properties -->
+ <!-- creates headers from model properties -->
                     }
                 </tr>
             </thead>
@@ -68,6 +68,9 @@
         <label for="ISBN">Book ISBN:</label>
         <input type="text" name="ISBN" id="ISBN" class="form-control" placeholder="Book ISBN (13 digits)" required />
         <br>
+
+        <label for="AuthorID">Author ID:</label>
+        <input type="number" id="AuthorID" name="AuthorID" class="form-control" placeholder="Enter Author ID" />
 
         <label for="Genre">Book Genre:</label>
         <input type="text" name="Genre" id="Genre" class="form-control" placeholder="Book Genre" required />
@@ -141,7 +144,7 @@
         <input type="number" name="book_Id" id="BookID" required />
         <br>
 
-        <button type="submit">Delete</button>
+        <button type="submit" class="btn btn-danger">Delete</button>
     </form>
     <br><br>
 

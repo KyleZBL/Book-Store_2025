@@ -141,7 +141,7 @@ namespace Book_Store.DataAccess
                     parameters.Add(new SqlParameter("@PublishingDate", book.PublishingDate));
                 }
 
-                // Remove last comma and add WHERE clause to query
+                // Remove last comma and adds WHERE clause to query
                 query = query.TrimEnd(',', ' ') + " WHERE BookID = @BookID";
                 parameters.Add(new SqlParameter("@BookID", book.BookID));
 

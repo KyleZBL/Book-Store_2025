@@ -15,9 +15,7 @@ namespace Book_Store.Models
         public DateTime PublishingDate { get; set; }
 
 
-        // Parameterless constructor
-        public Book() { }
-
+   
         // Constructor with full properties
         public Book(int bookID, string isbn, string title, int authorID, string genre, decimal price, int stock, int pages, DateTime publishingDate)
         {
