@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace LoginPage.Controllers
 
-// This is the AccountController class that handles user login and password reset functionality.
+// AccountController class for user login 
 {
     public class AccountController : Controller
     {
@@ -19,13 +19,13 @@ namespace LoginPage.Controllers
             return View();
         }
 
+
         // POST: Account/Login
         [HttpPost]
         public ActionResult Login(string username, string password)
         {
             if (username == enteredUsername && password == enteredPassword)
             {
-                // Successful login
                 ViewBag.Message = "Login successful!";
                 return View();
             }
@@ -37,34 +37,6 @@ namespace LoginPage.Controllers
             }
         }
 
-        // GET: Account/ForgotPassword
-        [HttpGet]
-        public ActionResult ForgotPassword()
-        {
-            return View();
-        }
-
-        // POST: Account/ForgotPassword
-        [HttpPost]
-        public ActionResult ForgotPassword(string email, string newPassword)
-        {
-            // Logic to reset the password and send email
-            ResetUserPassword(email, newPassword);
-
-            ViewBag.Message = "Password reset successfully. Please check your email.";
-            return View();
-        }
-
-
-        private bool IsValidUser(string username, string password)
-        {
-            return true;
-        }
-
-        private void ResetUserPassword(string email, string newPassword)
-        {
-
-        }
     }
 
 }

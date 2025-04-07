@@ -1,0 +1,149 @@
+@{
+    ViewBag.Title = "User Interface";
+}
+
+@using Book_Store.Models
+@model IEnumerable<Book>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Interface</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="container">
+
+    <h1>User Interface</h1>
+
+    <!-- Display All Books -->
+    <h2>Display All Books</h2>
+    <form action="/Book/User_Interface" method="get">
+        <button type="submit" class="btn btn-primary">Display all</button>
+    </form>
+    <br><br>
+
+    <!-- Display Book List -->
+    @if (Model != null && Model.Any())
+    {
+        <h2>Books List</h2>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    @foreach (var prop in typeof(Book).GetProperties())
+                    {
+                        <th>@prop.Name</th>
+ <!-- Dynamically create headers from model properties -->
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+                    <tr>
+                        @foreach (var prop in typeof(Book).GetProperties())
+                        {
+                            <td>@(prop.GetValue(book) ?? "N/A")</td>
+ <!-- Prevents null errors by showing "N/A" -->
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No books found.</p>
+    }
+    <br><br>
+
+    <!-- Create Book Form -->
+    <h2>Create Book</h2>
+    <form action="/Book/Create" method="post">
+        <label for="Title">Book Title:</label>
+        <input type="text" name="Title" id="Title" class="form-control" placeholder="Book name" required />
+        <br>
+
+        <label for="ISBN">Book ISBN:</label>
+        <input type="text" name="ISBN" id="ISBN" class="form-control" placeholder="Book ISBN (13 digits)" required />
+        <br>
+
+        <label for="Genre">Book Genre:</label>
+        <input type="text" name="Genre" id="Genre" class="form-control" placeholder="Book Genre" required />
+        <br>
+
+        <label for="Stock">Quantity:</label>
+        <input type="number" name="Stock" id="Stock" class="form-control" placeholder="Enter Stock Amount" required />
+        <br>
+
+        <label for="Price">Book Price:</label>
+        <input type="number" name="Price" id="Price" class="form-control" placeholder="Book Price" required />
+        <br>
+
+        <label for="Pages">Book Pages:</label>
+        <input type="number" name="Pages" id="Pages" class="form-control" placeholder="Book Pages" required />
+        <br>
+
+        <label for="PublishingDate">Publishing Date:</label>
+        <input type="date" name="PublishingDate" id="PublishingDate" class="form-control" required />
+        <br><br>
+
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+    <br><br>
+
+    <!-- Update Book Form -->
+    <<h2>Update Book</h2>
+    <form action="/Book/Update" method="post">
+        <label for="BookID">Book ID:</label>
+        <input type="number" id="BookID" name="BookID" class="form-control" placeholder="Enter Book ID to update" required />
+        <br>
+
+        <input type="hidden" name="BookID" id="BookIDHidden" value="" />
+
+
+        <label for="Title">New Book Title:</label>
+        <input type="text" id="Title" name="Title" class="form-control" placeholder="Enter new book title" />
+        <br>
+
+        <label for="ISBN">New ISBN:</label>
+        <input type="text" id="ISBN" name="ISBN" class="form-control" placeholder="Enter new 13-digit ISBN" />
+        <br>
+
+        <label for="Genre">New Genre:</label>
+        <input type="text" id="Genre" name="Genre" class="form-control" placeholder="Enter new genre" />
+        <br>
+
+        <label for="Price">New Price:</label>
+        <input type="number" id="Price" name="Price" class="form-control" step="0.01" placeholder="Enter new price" />
+        <br>
+
+        <label for="Stock">New Stock Quantity:</label>
+        <input type="number" id="Stock" name="Stock" class="form-control" placeholder="Enter new stock quantity" />
+        <br>
+
+        <label for="Pages">New Page Count:</label>
+        <input type="number" id="Pages" name="Pages" class="form-control" placeholder="Enter new page count" />
+        <br>
+
+        <label for="PublishingDate">New Publishing Date:</label>
+        <input type="date" id="PublishingDate" name="PublishingDate" class="form-control" min="1753-01-01" />
+        <br><br>
+
+        <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+
+    <!-- Delete Book Form -->
+    <h2>Delete Book</h2>
+    <form action="/Book/Delete" method="post">
+        <label for="BookID">Book ID to Delete:</label>
+        <input type="number" name="book_Id" id="BookID" required />
+        <br>
+
+        <button type="submit">Delete</button>
+    </form>
+    <br><br>
+
+</body>
+</html>

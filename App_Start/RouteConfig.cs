@@ -14,9 +14,16 @@ namespace Book_Store
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+            name: "AuthorInterface",
+            url: "Author/Author_Interface",
+            defaults: new { controller = "Author", action = "Author_Interface" }
+        );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+
             );
         }
     }
