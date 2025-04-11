@@ -15,14 +15,37 @@
 </head>
 <body class="container">
 
-    <h1>User Interface</h1>
+    <h1>Book Store</h1>
 
-    <!-- Display All Books -->
-    <h2>Inventory</h2>
-    <form action="/Book/User_Interface" method="get">
-        <button type="submit" class="btn btn-primary">Display all</button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Book Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Book/User_Interface">Main</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Account/Login">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Search by Author ID -->
+    <form method="get" action="@Url.Action("Index", "Books")">
+        <div class="form-group">
+            <label for="authorId">Enter Author ID:</label>
+            <input type="number" class="form-control" id="authorId" name="authorId" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
     </form>
-    <br><br>
+
+    <br>
 
     <!-- Display Book List -->
     @if (Model != null && Model.Any())
@@ -31,22 +54,28 @@
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
-                    @foreach (var prop in typeof(Book).GetProperties())
-                    {
-                        <th>@prop.Name</th>
- <!-- creates headers from model properties -->
-                    }
+                    <th>Book ID</th>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Pages</th>
+                    <th>Publishing Date</th>
+                    <th>Author</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var book in Model)
                 {
                     <tr>
-                        @foreach (var prop in typeof(Book).GetProperties())
-                        {
-                            <td>@(prop.GetValue(book) ?? "N/A")</td>
- <!-- Prevents null errors by showing "N/A" -->
-                        }
+                        <td>@book.BookID</td>
+                        <td>@book.Title</td>
+                        
+                        <td>@book.Genre</td>
+                        <td>@book.Price</td>
+                        <td>@book.Stock</td>
+                        <td>@book.Pages</td>
+                        <td>@book.PublishingDate.ToShortDateString()</td>
                     </tr>
                 }
             </tbody>
@@ -56,17 +85,13 @@
     {
         <p>No books found.</p>
     }
-    <br><br>
+
 
     <!-- Create Book Form -->
     <h2>Create Book</h2>
     <form action="/Book/Create" method="post">
         <label for="Title">Book Title:</label>
         <input type="text" name="Title" id="Title" class="form-control" placeholder="Book name" required />
-        <br>
-
-        <label for="ISBN">Book ISBN:</label>
-        <input type="text" name="ISBN" id="ISBN" class="form-control" placeholder="Book ISBN (13 digits)" required />
         <br>
 
         <label for="AuthorID">Author ID:</label>

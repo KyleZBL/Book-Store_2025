@@ -13,17 +13,19 @@ namespace Book_Store
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // Route for the Administrator Interface
             routes.MapRoute(
-            name: "AuthorInterface",
-            url: "Author/Author_Interface",
-            defaults: new { controller = "Author", action = "Author_Interface" }
-        );
+                name: "AdministratorInterface",
+                url: "Book/Administrator_Interface",
+                defaults: new { controller = "Book", action = "Administrator" }
+            );
 
+           
+            // Default Route (Handles Other Controllers)
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-
             );
         }
     }

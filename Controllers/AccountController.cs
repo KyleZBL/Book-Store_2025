@@ -5,39 +5,34 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace LoginPage.Controllers
-
-// AccountController class for user login 
 {
     public class AccountController : Controller
     {
-        // variables that hold temperary data for user validation
-        private string enteredUsername = "User1";
-        private string enteredPassword = "password123";
+        // Temporary hardcoded user credentials
+        private readonly string enteredUsername = "User1";
+        private readonly string enteredPassword = "password123";
 
+        // Displays the login page
         public ActionResult Login()
         {
             return View();
         }
 
-
-        // POST: Account/Login
+        // Handles POST request for login
         [HttpPost]
-        public ActionResult Login(string username, string password)
+        public ActionResult Authenticate(string username, string password)
         {
             if (username == enteredUsername && password == enteredPassword)
             {
-                ViewBag.Message = "Login successful!";
-                return View();
+                // Redirect to Administrator interface upon successful login
+                return RedirectToAction("Administrator", "Book");
             }
             else
             {
-                // Failed login
+                // Failed login attempt, display error message
                 ViewBag.Message = "Invalid username or password.";
-                return View();
+                return View("Login");
             }
         }
-
     }
-
 }
-

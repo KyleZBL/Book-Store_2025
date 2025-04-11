@@ -15,7 +15,7 @@
         <div class="d-flex justify-content-center align-items-center vh-100">
             <div class="col-md-4 bg-light">
                 <h2 class="">Account Login</h2>
-                <form method="post" action="/Account/Login">
+                <form method="post" action="/Account/Authenticate">
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username" name="username" required>
@@ -29,17 +29,16 @@
                         <div style="display: inline-block">
                             <label for="isAuthor">Are you an Author?</label>
                         </div>
-                    
-                        
-                            <input type="checkbox" class="form-check-input" id="isAuthor" name="isAuthor">
-                   
+
+
+                        <input type="checkbox" class="form-check-input" id="isAuthor" name="isAuthor">
+
                     </div>
 
                     <div class="p-3">
                         <button type="submit" class="btn btn-primary mt-2">Login</button>
                     </div>
-                   
-        
+
                 </form>
              
                 @if (ViewBag.Message != null)

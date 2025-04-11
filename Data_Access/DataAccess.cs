@@ -9,17 +9,17 @@ namespace Book_Store.DataAccess
 {
     public class BookDataAccess : IDataAccess
     {
+
+        //Database connection string
         private readonly string _connectionString;
 
         public BookDataAccess()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
 
-            // Debugging: Print the connection string to verify it's being loaded
-            Console.WriteLine("Connection String Loaded: " + _connectionString);
-
         }
 
+        //Methos to create a new book entry
         public void Create(Book book)
         {
             using (var conn = new SqlConnection(_connectionString))
@@ -38,6 +38,7 @@ namespace Book_Store.DataAccess
             }
         }
 
+        //Method to get all books
         public IEnumerable<Book> GetAll()
         {
             var books = new List<Book>();
@@ -66,6 +67,7 @@ namespace Book_Store.DataAccess
             return books;
         }
 
+        //Method to get a book by ID
         public Book GetById(int id)
         {
             using (var conn = new SqlConnection(_connectionString))
@@ -95,6 +97,7 @@ namespace Book_Store.DataAccess
             return null;
         }
 
+        //Method to update a book
         public void Update(Book book)
         {
             using (var conn = new SqlConnection(_connectionString))
@@ -149,6 +152,7 @@ namespace Book_Store.DataAccess
             }
         }
 
+        //Method to delete a book
         public void Delete(int id)
         {
             using (var conn = new SqlConnection(_connectionString))

@@ -127,6 +127,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\account.cs" />
+    <Compile Include="Models\author.cs" />
     <Compile Include="Models\book.cs" />
     <Compile Include="Data_Access\DataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +180,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Book\User_Interface.cshtml" />
+    <Content Include="Views\Book\Administrator_Interface.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
