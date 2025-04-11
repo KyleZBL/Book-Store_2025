@@ -14,6 +14,7 @@ namespace Book_Store.Models
         public int? Stock { get; set; }    
         public int? Pages { get; set; }     
         public DateTime PublishingDate { get; set; }
+        public string AuthorName { get; set; }
 
 
         public Book() { }

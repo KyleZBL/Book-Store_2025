@@ -70,12 +70,14 @@
                     <tr>
                         <td>@book.BookID</td>
                         <td>@book.Title</td>
-                        
+
                         <td>@book.Genre</td>
                         <td>@book.Price</td>
                         <td>@book.Stock</td>
                         <td>@book.Pages</td>
                         <td>@book.PublishingDate.ToShortDateString()</td>
+                        <td>@book.AuthorName</td>
+
                     </tr>
                 }
             </tbody>
@@ -86,40 +88,6 @@
         <p>No books found.</p>
     }
 
-
-    <!-- Create Book Form -->
-    <h2>Create Book</h2>
-    <form action="/Book/Create" method="post">
-        <label for="Title">Book Title:</label>
-        <input type="text" name="Title" id="Title" class="form-control" placeholder="Book name" required />
-        <br>
-
-        <label for="AuthorID">Author ID:</label>
-        <input type="number" id="AuthorID" name="AuthorID" class="form-control" placeholder="Enter Author ID" />
-
-        <label for="Genre">Book Genre:</label>
-        <input type="text" name="Genre" id="Genre" class="form-control" placeholder="Book Genre" required />
-        <br>
-
-        <label for="Stock">Quantity:</label>
-        <input type="number" name="Stock" id="Stock" class="form-control" placeholder="Enter Stock Amount" required />
-        <br>
-
-        <label for="Price">Book Price:</label>
-        <input type="number" name="Price" id="Price" class="form-control" placeholder="Book Price" required />
-        <br>
-
-        <label for="Pages">Book Pages:</label>
-        <input type="number" name="Pages" id="Pages" class="form-control" placeholder="Book Pages" required />
-        <br>
-
-        <label for="PublishingDate">Publishing Date:</label>
-        <input type="date" name="PublishingDate" id="PublishingDate" class="form-control" required />
-        <br><br>
-
-        <button type="submit" class="btn btn-success">Create</button>
-    </form>
-    <br><br>
 
     <!-- Update Book Form -->
     <<h2>Update Book</h2>
@@ -162,16 +130,7 @@
         <button type="submit" class="btn btn-warning">Update</button>
     </form>
 
-    <!-- Delete Book Form -->
-    <h2>Delete Book</h2>
-    <form action="/Book/Delete" method="post">
-        <label for="BookID">Book ID to Delete:</label>
-        <input type="number" name="book_Id" id="BookID" required />
-        <br>
-
-        <button type="submit" class="btn btn-danger">Delete</button>
-    </form>
-    <br><br>
+  
 
 </body>
 </html>

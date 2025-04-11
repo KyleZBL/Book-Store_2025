@@ -3,47 +3,51 @@
   "WorkspaceRootPath": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|c:\\users\\kyle\\source\\repos\\assignment_2_crud\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|c:\\users\\kyle\\source\\repos\\assignment_2_crud\\data_access\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\data_access\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:data_access\\dataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|c:\\users\\kyle\\source\\repos\\assignment_2_crud\\views\\book\\administrator_interface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:views\\book\\administrator_interface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\views\\book\\user_interface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|c:\\users\\kyle\\source\\repos\\assignment_2_crud\\views\\book\\user_interface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:views\\book\\user_interface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\data_access\\idataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:data_access\\idataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|c:\\users\\kyle\\source\\repos\\assignment_2_crud\\views\\book\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:views\\book\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\views\\book\\administrator_interface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:views\\book\\administrator_interface.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|c:\\users\\kyle\\source\\repos\\assignment_2_crud\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\data_access\\idataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:data_access\\idataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67DD3AB9-E102-49EA-81A0-5085C23591F7}|Book_Store.csproj|solutionrelative:models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -58,84 +62,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-11T16:17:57.33Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Administrator_Interface.cshtml",
-              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Book\\Administrator_Interface.cshtml",
-              "RelativeDocumentMoniker": "Views\\Book\\Administrator_Interface.cshtml",
-              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Book\\Administrator_Interface.cshtml",
-              "RelativeToolTip": "Views\\Book\\Administrator_Interface.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-10T19:28:05.501Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Data_Access\\DataAccess.cs",
-              "RelativeDocumentMoniker": "Data_Access\\DataAccess.cs",
-              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Data_Access\\DataAccess.cs",
-              "RelativeToolTip": "Data_Access\\DataAccess.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T04:02:23.341Z",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Book\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Book\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Book\\Create.cshtml",
+              "RelativeToolTip": "Views\\Book\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T22:02:26.389Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RouteConfig.cs",
-              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\App_Start\\RouteConfig.cs",
-              "RelativeDocumentMoniker": "App_Start\\RouteConfig.cs",
-              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\App_Start\\RouteConfig.cs",
-              "RelativeToolTip": "App_Start\\RouteConfig.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAABEAAAAvAAAAAAAAAA==",
+              "Title": "BookController.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
+              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Controllers\\BookController.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T21:51:38.156Z",
+              "WhenOpened": "2025-04-07T04:45:03.547Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "account.cs",
-              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Models\\account.cs",
-              "RelativeDocumentMoniker": "Models\\account.cs",
-              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Models\\account.cs",
-              "RelativeToolTip": "Models\\account.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T08:27:01.994Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
@@ -148,72 +109,120 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IDataAccess.cs",
-              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Data_Access\\IDataAccess.cs",
-              "RelativeDocumentMoniker": "Data_Access\\IDataAccess.cs",
-              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Data_Access\\IDataAccess.cs",
-              "RelativeToolTip": "Data_Access\\IDataAccess.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T04:53:59.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BookController.cs",
-              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Controllers\\BookController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
-              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Controllers\\BookController.cs",
-              "RelativeToolTip": "Controllers\\BookController.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAADwv0cAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T04:45:03.547Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "User_Interface.cshtml",
               "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Book\\User_Interface.cshtml",
               "RelativeDocumentMoniker": "Views\\Book\\User_Interface.cshtml",
               "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Book\\User_Interface.cshtml",
               "RelativeToolTip": "Views\\Book\\User_Interface.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAALAAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-02T21:47:03.088Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
+              "Title": "DataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Data_Access\\DataAccess.cs",
+              "RelativeDocumentMoniker": "Data_Access\\DataAccess.cs",
+              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Data_Access\\DataAccess.cs",
+              "RelativeToolTip": "Data_Access\\DataAccess.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAFUAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:02:23.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Administrator_Interface.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Book\\Administrator_Interface.cshtml",
+              "RelativeDocumentMoniker": "Views\\Book\\Administrator_Interface.cshtml",
+              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Book\\Administrator_Interface.cshtml",
+              "RelativeToolTip": "Views\\Book\\Administrator_Interface.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T19:28:05.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "book.cs",
               "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Models\\book.cs",
               "RelativeDocumentMoniker": "Models\\book.cs",
               "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Models\\book.cs",
               "RelativeToolTip": "Models\\book.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-28T08:07:47.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "account.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Models\\account.cs",
+              "RelativeDocumentMoniker": "Models\\account.cs",
+              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Models\\account.cs",
+              "RelativeToolTip": "Models\\account.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T08:27:01.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Data_Access\\IDataAccess.cs",
+              "RelativeDocumentMoniker": "Data_Access\\IDataAccess.cs",
+              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Data_Access\\IDataAccess.cs",
+              "RelativeToolTip": "Data_Access\\IDataAccess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T04:53:59.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T16:17:57.33Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "App_Start\\RouteConfig.cs",
+              "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T21:51:38.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "author.cs",
               "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Models\\author.cs",
               "RelativeDocumentMoniker": "Models\\author.cs",
               "ToolTip": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Models\\author.cs",
               "RelativeToolTip": "Models\\author.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:50:31.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T14:50:31.375Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Web.config",
               "DocumentMoniker": "C:\\Users\\Kyle\\source\\repos\\Assignment_2_CRUD\\Web.config",
               "RelativeDocumentMoniker": "Web.config",

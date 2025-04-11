@@ -3,47 +3,56 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Configuration;
 using Book_Store.Models;
-using System.Diagnostics;
 
 namespace Book_Store.DataAccess
 {
     public class BookDataAccess : IDataAccess
     {
-
-        //Database connection string
+        // Database connection string
         private readonly string _connectionString;
 
         public BookDataAccess()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
-
         }
 
-        //Methos to create a new book entry
         public void Create(Book book)
         {
             using (var conn = new SqlConnection(_connectionString))
-            using (var cmd = new SqlCommand("INSERT INTO Books (Title, AuthorID, Genre, Price, Stock, Pages, PublishingDate) VALUES (@Title, @AuthorID, @Genre, @Price, @Stock, @Pages, @PublishingDate)", conn))
+            using (var cmd = new SqlCommand(@"
+        INSERT INTO Books (Title, Genre, Price, Stock, Pages, PublishingDate, AuthorID) 
+        VALUES (@Title, @Genre, @Price, @Stock, @Pages, @PublishingDate, @AuthorID)", conn))
             {
                 cmd.Parameters.AddWithValue("@Title", book.Title);
-                cmd.Parameters.AddWithValue("@AuthorID", book.AuthorID);
                 cmd.Parameters.AddWithValue("@Genre", book.Genre);
                 cmd.Parameters.AddWithValue("@Price", book.Price);
                 cmd.Parameters.AddWithValue("@Stock", book.Stock);
                 cmd.Parameters.AddWithValue("@Pages", book.Pages);
                 cmd.Parameters.AddWithValue("@PublishingDate", book.PublishingDate);
+                cmd.Parameters.AddWithValue("@AuthorID", book.AuthorID == 0 ? DBNull.Value : (object)book.AuthorID);
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
         }
 
-        //Method to get all books
+        // Method to get all books with author names
         public IEnumerable<Book> GetAll()
         {
             var books = new List<Book>();
             using (var conn = new SqlConnection(_connectionString))
-            using (var cmd = new SqlCommand("SELECT * FROM Books", conn))
+            using (var cmd = new SqlCommand(@"
+                SELECT 
+                    b.BookID, 
+                    b.Title, 
+                    b.Genre, 
+                    b.Price, 
+                    b.Stock, 
+                    b.Pages, 
+                    b.PublishingDate, 
+                    COALESCE(a.FirstName + ' ' + a.LastName, 'No Author Assigned') AS AuthorName
+                FROM Books b
+                LEFT JOIN Author a ON b.AuthorID = a.AuthorId;", conn))
             {
                 conn.Open();
                 using (var reader = cmd.ExecuteReader())
@@ -53,13 +62,13 @@ namespace Book_Store.DataAccess
                         books.Add(new Book
                         {
                             BookID = (int)reader["BookID"],
-                            Title = (string)reader["Title"],
-                            AuthorID = (int)reader["AuthorID"],
-                            Genre = (string)reader["Genre"],
+                            Title = reader["Title"].ToString(),
+                            Genre = reader["Genre"].ToString(),
                             Price = (decimal)reader["Price"],
                             Stock = (int)reader["Stock"],
                             Pages = (int)reader["Pages"],
-                            PublishingDate = (DateTime)reader["PublishingDate"]
+                            PublishingDate = (DateTime)reader["PublishingDate"],
+                            AuthorName = reader["AuthorName"].ToString() // Correctly displays the author's full name
                         });
                     }
                 }
@@ -67,11 +76,22 @@ namespace Book_Store.DataAccess
             return books;
         }
 
-        //Method to get a book by ID
+        // Method to get a book by ID
         public Book GetById(int id)
         {
             using (var conn = new SqlConnection(_connectionString))
-            using (var cmd = new SqlCommand("SELECT * FROM Books WHERE BookID = @BookID", conn))
+            using (var cmd = new SqlCommand(@"
+                SELECT 
+                    b.BookID, 
+                    b.Title, 
+                    b.Genre, 
+                    b.Price, 
+                    b.Stock, 
+                    b.Pages, 
+                    b.PublishingDate, 
+                    COALESCE(a.FirstName + ' ' + a.LastName, 'No Author Assigned') AS AuthorName
+                FROM Books b
+                LEFT JOIN Author a ON b.AuthorID = a.AuthorId;", conn))
             {
                 cmd.Parameters.AddWithValue("@BookID", id);
 
@@ -83,13 +103,13 @@ namespace Book_Store.DataAccess
                         return new Book
                         {
                             BookID = (int)reader["BookID"],
-                            Title = (string)reader["Title"],
-                            AuthorID = (int)reader["AuthorID"],
-                            Genre = (string)reader["Genre"],
+                            Title = reader["Title"].ToString(),
+                            Genre = reader["Genre"].ToString(),
                             Price = (decimal)reader["Price"],
                             Stock = (int)reader["Stock"],
                             Pages = (int)reader["Pages"],
-                            PublishingDate = (DateTime)reader["PublishingDate"]
+                            PublishingDate = (DateTime)reader["PublishingDate"],
+                            AuthorName = reader["AuthorName"].ToString()
                         };
                     }
                 }
@@ -97,66 +117,38 @@ namespace Book_Store.DataAccess
             return null;
         }
 
-        //Method to update a book
+        // Method to update a book
         public void Update(Book book)
         {
             using (var conn = new SqlConnection(_connectionString))
+            using (var cmd = new SqlCommand(@"
+                UPDATE Books 
+                SET Title = @Title, 
+                    Genre = @Genre, 
+                    Price = @Price, 
+                    Stock = @Stock, 
+                    Pages = @Pages, 
+                    PublishingDate = @PublishingDate 
+                WHERE BookID = @BookID;", conn))
             {
+                cmd.Parameters.AddWithValue("@Title", book.Title);
+                cmd.Parameters.AddWithValue("@Genre", book.Genre);
+                cmd.Parameters.AddWithValue("@Price", book.Price);
+                cmd.Parameters.AddWithValue("@Stock", book.Stock);
+                cmd.Parameters.AddWithValue("@Pages", book.Pages);
+                cmd.Parameters.AddWithValue("@PublishingDate", book.PublishingDate);
+                cmd.Parameters.AddWithValue("@BookID", book.BookID);
+
                 conn.Open();
-
-                // Build update query 
-                var query = "UPDATE Books SET ";
-                var parameters = new List<SqlParameter>();
-
-                if (!string.IsNullOrEmpty(book.Title))
-                {
-                    query += "Title = @Title, ";
-                    parameters.Add(new SqlParameter("@Title", book.Title));
-                }
-                if (!string.IsNullOrEmpty(book.ISBN))
-                {
-                    query += "ISBN = @ISBN, ";
-                    parameters.Add(new SqlParameter("@ISBN", book.ISBN));
-                }
-                if (!string.IsNullOrEmpty(book.Genre))
-                {
-                    query += "Genre = @Genre, ";
-                    parameters.Add(new SqlParameter("@Genre", book.Genre));
-                }
-                if (book.Price.HasValue)
-                {
-                    query += "Price = @Price, ";
-                    parameters.Add(new SqlParameter("@Price", book.Price));
-                }
-                if (book.Stock.HasValue)
-                {
-                    query += "Stock = @Stock, ";
-                    parameters.Add(new SqlParameter("@Stock", book.Stock));
-                }
-                if (book.Pages.HasValue)
-                {
-                    query += "Pages = @Pages, ";
-                    parameters.Add(new SqlParameter("@Pages", book.Pages));
-                }
-                if (book.PublishingDate != default)
-                {
-                    query += "PublishingDate = @PublishingDate, ";
-                    parameters.Add(new SqlParameter("@PublishingDate", book.PublishingDate));
-                }
-
-                // Remove last comma and adds WHERE clause to query
-                query = query.TrimEnd(',', ' ') + " WHERE BookID = @BookID";
-                parameters.Add(new SqlParameter("@BookID", book.BookID));
-
-               
+                cmd.ExecuteNonQuery();
             }
         }
 
-        //Method to delete a book
+        // Method to delete a book
         public void Delete(int id)
         {
             using (var conn = new SqlConnection(_connectionString))
-            using (var cmd = new SqlCommand("DELETE FROM Books WHERE BookID = @BookID", conn))
+            using (var cmd = new SqlCommand("DELETE FROM Books WHERE BookID = @BookID;", conn))
             {
                 cmd.Parameters.AddWithValue("@BookID", id);
 
