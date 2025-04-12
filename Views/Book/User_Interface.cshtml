@@ -88,49 +88,5 @@
         <p>No books found.</p>
     }
 
-
-    <!-- Update Book Form -->
-    <<h2>Update Book</h2>
-    <form action="/Book/Update" method="post">
-        <label for="BookID">Book ID:</label>
-        <input type="number" id="BookID" name="BookID" class="form-control" placeholder="Enter Book ID to update" required />
-        <br>
-
-        <input type="hidden" name="BookID" id="BookIDHidden" value="" />
-
-
-        <label for="Title">New Book Title:</label>
-        <input type="text" id="Title" name="Title" class="form-control" placeholder="Enter new book title" />
-        <br>
-
-        <label for="ISBN">New ISBN:</label>
-        <input type="text" id="ISBN" name="ISBN" class="form-control" placeholder="Enter new 13-digit ISBN" />
-        <br>
-
-        <label for="Genre">New Genre:</label>
-        <input type="text" id="Genre" name="Genre" class="form-control" placeholder="Enter new genre" />
-        <br>
-
-        <label for="Price">New Price:</label>
-        <input type="number" id="Price" name="Price" class="form-control" step="0.01" placeholder="Enter new price" />
-        <br>
-
-        <label for="Stock">New Stock Quantity:</label>
-        <input type="number" id="Stock" name="Stock" class="form-control" placeholder="Enter new stock quantity" />
-        <br>
-
-        <label for="Pages">New Page Count:</label>
-        <input type="number" id="Pages" name="Pages" class="form-control" placeholder="Enter new page count" />
-        <br>
-
-        <label for="PublishingDate">New Publishing Date:</label>
-        <input type="date" id="PublishingDate" name="PublishingDate" class="form-control" min="1753-01-01" />
-        <br><br>
-
-        <button type="submit" class="btn btn-warning">Update</button>
-    </form>
-
-  
-
 </body>
 </html>

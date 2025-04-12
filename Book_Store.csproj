@@ -126,7 +126,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\account.cs" />
     <Compile Include="Models\author.cs" />
     <Compile Include="Models\book.cs" />
     <Compile Include="Data_Access\DataAccess.cs" />
@@ -182,6 +181,7 @@
     <Content Include="Views\Book\User_Interface.cshtml" />
     <Content Include="Views\Book\Administrator_Interface.cshtml" />
     <Content Include="Views\Book\Create.cshtml" />
+    <Content Include="Views\Book\Update.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

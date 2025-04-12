@@ -8,13 +8,16 @@ namespace Book_Store.Models
         public int BookID { get; set; }
         public string Title { get; set; }
         public string ISBN { get; set; }
-        public int? AuthorID { get; set; } 
+        public int? AuthorID { get; set; }
         public string Genre { get; set; }
         public decimal? Price { get; set; }
         public int? Stock { get; set; }    
-        public int? Pages { get; set; }     
-        public DateTime PublishingDate { get; set; }
+        public int? Pages { get; set; }
+        public DateTime PublishingDate { get; set; } = DateTime.Now;
         public string AuthorName { get; set; }
+
+        // Reference Author Model
+        public Author Author { get; set; }
 
 
         public Book() { }

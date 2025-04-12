@@ -81,17 +81,8 @@ namespace Book_Store.DataAccess
         {
             using (var conn = new SqlConnection(_connectionString))
             using (var cmd = new SqlCommand(@"
-                SELECT 
-                    b.BookID, 
-                    b.Title, 
-                    b.Genre, 
-                    b.Price, 
-                    b.Stock, 
-                    b.Pages, 
-                    b.PublishingDate, 
-                    COALESCE(a.FirstName + ' ' + a.LastName, 'No Author Assigned') AS AuthorName
-                FROM Books b
-                LEFT JOIN Author a ON b.AuthorID = a.AuthorId;", conn))
+        SELECT BookID, Title, Genre, Price, Stock, Pages, PublishingDate, AuthorID 
+        FROM Books WHERE BookID = @BookID;", conn))
             {
                 cmd.Parameters.AddWithValue("@BookID", id);
 
@@ -109,13 +100,14 @@ namespace Book_Store.DataAccess
                             Stock = (int)reader["Stock"],
                             Pages = (int)reader["Pages"],
                             PublishingDate = (DateTime)reader["PublishingDate"],
-                            AuthorName = reader["AuthorName"].ToString()
+                            AuthorID = (int)reader["AuthorID"]
                         };
                     }
                 }
             }
             return null;
         }
+
 
         // Method to update a book
         public void Update(Book book)

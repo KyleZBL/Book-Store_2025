@@ -1,0 +1,52 @@
+
+@{
+    ViewBag.Title = "Update";
+}
+
+@using Book_Store.Models
+
+<h2>Edit Book</h2>
+
+<table class="table table-bordered">
+    <tr><th>Book ID:</th><td>@Model.BookID</td></tr>
+    <tr><th>Title:</th><td>@Model.Title</td></tr>
+    <tr><th>Genre:</th><td>@Model.Genre</td></tr>
+    <tr><th>Price:</th><td>@Model.Price.ToString("F2")</td></tr>
+    <tr><th>Stock:</th><td>@Model.Stock</td></tr>
+    <tr><th>Pages:</th><td>@Model.Pages</td></tr>
+    <tr><th>Publishing Date:</th><td>@Model.PublishingDate.ToString("yyyy-MM-dd")</td></tr>
+    <tr><th>Author:</th><td>@Model.Author.FirstName @Model.Author.LastName</td></tr>
+</table>
+
+<hr>
+
+<form action="@Url.Action("Update", "Book")" method="post">
+    <input type="hidden" name="BookID" value="@Model.BookID" />
+
+    <label>Title:</label>
+    <input type="text" name="Title" value="@Model.Title" required />
+
+    <label>Genre:</label>
+    <input type="text" name="Genre" value="@Model.Genre" required />
+
+    <label>Price:</label>
+    <input type="number" name="Price" value="@Model.Price" required />
+
+    <label>Stock:</label>
+    <input type="number" name="Stock" value="@Model.Stock" required />
+
+    <label>Pages:</label>
+    <input type="number" name="Pages" value="@Model.Pages" required />
+
+    <label>Publishing Date:</label>
+    <input type="date" name="PublishingDate" value="@Model.PublishingDate.ToString("yyyy-MM-dd")" required />
+
+    <label>Author First Name:</label>
+    <input type="hidden" name="AuthorID" value="@Model.AuthorID" />
+    <input type="text" name="Author.FirstName" value="@Model.Author.FirstName" required />
+
+    <label>Author Last Name:</label>
+    <input type="text" name="Author.LastName" value="@Model.Author.LastName" required />
+
+    <button type="submit" class="btn btn-success">Save Changes</button>
+</form>
