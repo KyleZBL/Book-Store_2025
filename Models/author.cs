@@ -12,6 +12,7 @@ namespace Book_Store.Models
         // Navigation property for books the author has written
         public List<Book> Books { get; set; } = new List<Book>();
 
+        // Default constructor
         public Author() { }
 
         // Constructor with full properties
@@ -22,4 +23,4 @@ namespace Book_Store.Models
             LastName = lastName;
         }
     }
-}
+   }

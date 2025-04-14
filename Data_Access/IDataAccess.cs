@@ -10,5 +10,7 @@ namespace Book_Store.DataAccess
         Book GetById(int id);
         void Update(Book book);
         void Delete(int id);
+        List<Book> GetBooksByAuthor(string authorName);
+        List<Book> GetBooksByGenre(string authorName);
     }
 }

@@ -16,6 +16,7 @@ namespace Book_Store.DataAccess
             _connectionString = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
         }
 
+        // Method to create a new book
         public void Create(Book book)
         {
             using (var conn = new SqlConnection(_connectionString))
@@ -35,7 +36,6 @@ namespace Book_Store.DataAccess
                 cmd.ExecuteNonQuery();
             }
         }
-
         // Method to get all books with author names
         public IEnumerable<Book> GetAll()
         {
@@ -68,14 +68,13 @@ namespace Book_Store.DataAccess
                             Stock = (int)reader["Stock"],
                             Pages = (int)reader["Pages"],
                             PublishingDate = (DateTime)reader["PublishingDate"],
-                            AuthorName = reader["AuthorName"].ToString() // Correctly displays the author's full name
+                            AuthorName = reader["AuthorName"].ToString()
                         });
                     }
                 }
             }
             return books;
         }
-
         // Method to get a book by ID
         public Book GetById(int id)
         {
@@ -108,7 +107,6 @@ namespace Book_Store.DataAccess
             return null;
         }
 
-
         // Method to update a book
         public void Update(Book book)
         {
@@ -135,7 +133,6 @@ namespace Book_Store.DataAccess
                 cmd.ExecuteNonQuery();
             }
         }
-
         // Method to delete a book
         public void Delete(int id)
         {
@@ -147,6 +144,94 @@ namespace Book_Store.DataAccess
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        // Method to get books by author name
+        public List<Book> GetBooksByAuthor(string authorName)
+        {
+            var books = new List<Book>();
+
+            using (var connection = new SqlConnection(_connectionString))
+            using (var command = new SqlCommand(@"
+                SELECT 
+                    b.BookID, 
+                    b.Title, 
+                    b.Genre, 
+                    b.Price, 
+                    b.Stock, 
+                    b.Pages, 
+                    b.PublishingDate,
+                    COALESCE(a.FirstName + ' ' + a.LastName, 'No Author Assigned') AS AuthorName
+                FROM Books b
+                LEFT JOIN Author a ON b.AuthorID = a.AuthorId
+                WHERE a.FirstName + ' ' + a.LastName LIKE @AuthorName;", connection))
+            {
+                command.Parameters.AddWithValue("@AuthorName", $"%{authorName}%");
+
+                connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        books.Add(new Book
+                        {
+                            BookID = Convert.ToInt32(reader["BookID"]),
+                            Title = reader["Title"].ToString(),
+                            Genre = reader["Genre"].ToString(),
+                            Price = reader["Price"] != DBNull.Value ? (decimal?)Convert.ToDecimal(reader["Price"]) : null,
+                            Stock = reader["Stock"] != DBNull.Value ? (int?)Convert.ToInt32(reader["Stock"]) : null,
+                            Pages = reader["Pages"] != DBNull.Value ? (int?)Convert.ToInt32(reader["Pages"]) : null,
+                            PublishingDate = Convert.ToDateTime(reader["PublishingDate"]),
+                            AuthorName = reader["AuthorName"].ToString()
+                        });
+                    }
+                }
+            }
+            return books;
+        }
+
+        // Method to get books by genre
+        public List<Book> GetBooksByGenre(string genre)
+        {
+            var books = new List<Book>();
+
+            using (var connection = new SqlConnection(_connectionString))
+            using (var command = new SqlCommand(@"
+                SELECT 
+                    BookID, 
+                    Title, 
+                    Genre, 
+                    Price, 
+                    Stock, 
+                    Pages, 
+                    PublishingDate,
+                    COALESCE(a.FirstName + ' ' + a.LastName, 'No Author Assigned') AS AuthorName
+                FROM Books b
+                LEFT JOIN Author a ON b.AuthorID = a.AuthorId
+                WHERE Genre LIKE @Genre;", connection))
+            {
+                command.Parameters.AddWithValue("@Genre", $"%{genre}%");
+
+                connection.Open();
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        books.Add(new Book
+                        {
+                            BookID = Convert.ToInt32(reader["BookID"]),
+                            Title = reader["Title"].ToString(),
+                            Genre = reader["Genre"].ToString(),
+                            Price = reader["Price"] != DBNull.Value ? (decimal?)Convert.ToDecimal(reader["Price"]) : null,
+                            Stock = reader["Stock"] != DBNull.Value ? (int?)Convert.ToInt32(reader["Stock"]) : null,
+                            Pages = reader["Pages"] != DBNull.Value ? (int?)Convert.ToInt32(reader["Pages"]) : null,
+                            PublishingDate = Convert.ToDateTime(reader["PublishingDate"]),
+                            AuthorName = reader["AuthorName"].ToString()
+                        });
+                    }
+                }
+            }
+            return books;
         }
     }
 }

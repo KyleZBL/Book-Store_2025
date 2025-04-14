@@ -13,17 +13,18 @@
     <title>User Interface</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
-<body class="container">
+<body class="container pt-2">
 
-    <h1>Book Store</h1>
+    <h1 class=" text-center d-none">Book Store</h1>
 
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Book Store</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse text" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="/Book/User_Interface">Main</a>
@@ -34,23 +35,28 @@
             </ul>
         </div>
     </nav>
+    <br>
 
-
-    <!-- Search by Author ID -->
-    <form method="get" action="@Url.Action("Index", "Books")">
-        <div class="form-group">
-            <label for="authorId">Enter Author ID:</label>
-            <input type="number" class="form-control" id="authorId" name="authorId" required>
-        </div>
+    <!-- Forms -->
+    <form method="get" action="@Url.Action("SearchByAuthor", "Book")">
+        <label class="font-weight-bold" for="authorName">Author:</label>
+        <input type="text" name="authorName" placeholder="Author first & last name" required class="form-control-sm">
+        <br>
         <button type="submit" class="btn btn-primary">Search</button>
     </form>
 
     <br>
+    <form method="get" action="@Url.Action("SearchByGenre", "Book")">
+        <label class="font-weight-bold" for="genre">Genre:</label>
+        <input type="text" name="genre" placeholder="Enter genre" required class="form-control-sm ml-2">
+        <br>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
 
-    <!-- Display Book List -->
+    <!-- Search Result/Book Inventory -->
     @if (Model != null && Model.Any())
     {
-        <h2>Book Inventory</h2>
+        <h2 class="text-center">Book Inventory</h2>
         <table class="table table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -87,6 +93,5 @@
     {
         <p>No books found.</p>
     }
-
 </body>
 </html>

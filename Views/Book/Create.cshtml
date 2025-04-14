@@ -1,63 +1,83 @@
-
 @{
     ViewBag.Title = "Create";
 }
 
 @using Book_Store.Models
 
-<h2>Create New Book</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Create New Book</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-secondary">
+    <div class="container mt-4 bg-light">
+        <h2 class="text-center mb-4">Create New Book</h2>
 
+        <form method="post" action="/Book/Create" class="p-4 border rounded shadow">
+            <div class="row">
+                <!-- Book Details -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="Title" class="form-label">Title:</label>
+                        <input type="text" class="form-control" name="Title" id="Title" required>
+                    </div>
 
-<!-- Book -->
-<form method="post" action="/Book/Create">
-    <div class="form-group">
-        <label>Title:</label>
-        <input type="text" class="form-control" name="Title" required>
+                    <div class="mb-3">
+                        <label for="Genre" class="form-label">Genre:</label>
+                        <input type="text" class="form-control" name="Genre" id="Genre">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Price" class="form-label">Price:</label>
+                        <input type="number" class="form-control" name="Price" id="Price" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Stock" class="form-label">Stock:</label>
+                        <input type="number" class="form-control" name="Stock" id="Stock">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Pages" class="form-label">Pages:</label>
+                        <input type="number" class="form-control" name="Pages" id="Pages">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="PublishingDate" class="form-label">Publishing Date:</label>
+                        <input type="date" class="form-control" name="PublishingDate" id="PublishingDate">
+                    </div>
+                </div>
+
+                <!-- Author Details -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="AuthorID" class="form-label">Author ID (if known):</label>
+                        <input type="number" class="form-control" name="AuthorID" id="AuthorID">
+                        <small class="text-muted">Or enter new author details below:</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="AuthorFirstName" class="form-label">First Name:</label>
+                        <input type="text" class="form-control" name="AuthorFirstName" id="AuthorFirstName">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="AuthorLastName" class="form-label">Last Name:</label>
+                        <input type="text" class="form-control" name="AuthorLastName" id="AuthorLastName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-success">Create Book</button>
+                <a href="/Book/Administrator" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
     </div>
 
-    <div class="form-group">
-        <label>Genre:</label>
-        <input type="text" class="form-control" name="Genre">
-    </div>
-
-    <div class="form-group">
-        <label>Price:</label>
-        <input type="number" class="form-control" name="Price" required>
-    </div>
-
-    <div class="form-group">
-        <label>Stock:</label>
-        <input type="number" class="form-control" name="Stock">
-    </div>
-
-    <div class="form-group">
-        <label>Pages:</label>
-        <input type="number" class="form-control" name="Pages">
-    </div>
-
-    <div class="form-group">
-        <label>Publishing Date:</label>
-        <input type="date" class="form-control" name="PublishingDate">
-    </div>
-
-    <!-- Author -->
-    <div class="form-group">
-        <label>Author ID (if known):</label>
-        <input type="number" class="form-control" name="AuthorID">
-
-        <small class="text-muted">Or enter new author details below:</small>
-    </div>
-
-    <div class="form-group">
-        <label>First Name:</label>
-        <input type="text" class="form-control" name="AuthorFirstName">
-    </div>
-
-    <div class="form-group">
-        <label>Last Name:</label>
-        <input type="text" class="form-control" name="AuthorLastName">
-    </div>
-
-    <button type="submit" class="btn btn-success">Create Book</button>
-    <a href="/Book/Administrator" class="btn btn-secondary">Cancel</a>
-</form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

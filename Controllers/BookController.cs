@@ -14,12 +14,28 @@ namespace Book_Store.Controllers
         private readonly string _connectionString;
         private readonly IDataAccess _dataAccess;
 
+        // Constructor to initialize connection string and data access
         public BookController()
         {
             _connectionString = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
             _dataAccess = new BookDataAccess();
         }
 
+        //Search books by author
+        public ActionResult SearchByAuthor(string authorName)
+        {
+            var books = _dataAccess.GetBooksByAuthor(authorName); // Fetch books by author
+            return View("User_Interface", books); // Return results to same view
+        }
+
+        //Search books by genre
+        public ActionResult SearchByGenre(string genre)
+        {
+            var books = _dataAccess.GetBooksByGenre(genre);
+            return View("User_Interface", books); 
+        }
+
+        // Display all books
         public ActionResult User_Interface(int? authorId)
         {
             var books = _dataAccess.GetAll();
@@ -30,18 +46,23 @@ namespace Book_Store.Controllers
             return View("User_Interface", books);
         }
 
+        // Display book details
         public ActionResult Administrator()
         {
             var books = _dataAccess.GetAll();
             return View("Administrator_Interface", books);
         }
 
+        // Create a new book via GET and POST
+
+        // GET: Book/Create
         [HttpGet]
         public ActionResult Create()
         {
             return View("Create");
         }
 
+        // POST: Book/Create
         [HttpPost]
         public ActionResult Create(Book book, string AuthorFirstName, string AuthorLastName)
         {
@@ -91,6 +112,10 @@ namespace Book_Store.Controllers
             return RedirectToAction("Administrator");
         }
 
+
+        // Update book details via GET and POST
+
+        // GET: Book/Update
         [HttpGet]
         public ActionResult Update(int id)
         {
@@ -102,10 +127,10 @@ namespace Book_Store.Controllers
 
             using (var conn = new SqlConnection(_connectionString))
             using (var cmd = new SqlCommand(@"
-        SELECT a.FirstName, a.LastName
-        FROM Author a
-        INNER JOIN Books b ON a.AuthorId = b.AuthorID
-        WHERE b.BookID = @BookID;", conn))
+                SELECT a.FirstName, a.LastName
+                FROM Author a
+                INNER JOIN Books b ON a.AuthorId = b.AuthorID
+                WHERE b.BookID = @BookID;", conn))
             {
                 cmd.Parameters.AddWithValue("@BookID", id);
                 conn.Open();
@@ -122,11 +147,10 @@ namespace Book_Store.Controllers
                     }
                 }
             }
-
             return View("Update", book);
         }
 
-
+        // POST: Book/Update
         [HttpPost]
         public ActionResult Update(Book book)
         {
@@ -177,6 +201,7 @@ namespace Book_Store.Controllers
             return View("Update", book);
         }
 
+        // Delete book via POST
         [HttpPost]
         public ActionResult Delete(int book_Id)
         {
@@ -184,4 +209,5 @@ namespace Book_Store.Controllers
             return RedirectToAction(nameof(User_Interface));
         }
     }
-}
+
+ }
